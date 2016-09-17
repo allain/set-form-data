@@ -1,9 +1,9 @@
-TYPE_FILTER = [
+var TYPE_FILTER = [
     'text',
     'email',
     'password',
     'select'
-]
+];
 
 export default function setFormData(form, data) {
   if (!form) {
