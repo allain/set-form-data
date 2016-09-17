@@ -24,5 +24,10 @@
   "keywords": [
     "form",
     "forms"
-  ]
+  ],
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  }
 }

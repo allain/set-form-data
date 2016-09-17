@@ -1,1 +1,1 @@
-export { default } from './src/set-form-data'
+export { default } from './src/set-form-data';
