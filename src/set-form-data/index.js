@@ -1,8 +1,9 @@
 var TYPE_FILTER = [
     'text',
+    'textarea',
     'email',
     'password',
-    'select'
+    'select-one'
 ];
 
 function setFormData(form, data) {
