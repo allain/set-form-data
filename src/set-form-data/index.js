@@ -5,7 +5,7 @@ var TYPE_FILTER = [
     'select'
 ];
 
-export default function setFormData(form, data) {
+function setFormData(form, data) {
   if (!form) {
     throw new Error(`A form is required by getFormData, was given form=${form}`)
   }
@@ -22,3 +22,5 @@ export default function setFormData(form, data) {
       }
   }
 }
+
+export default setFormData
