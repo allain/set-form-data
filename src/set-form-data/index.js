@@ -17,8 +17,8 @@ function setFormData(form, data) {
       }
 
       let elemId = elem.name || elem.id
-      if (data.hasOwnProperty(elemId)) {
-          elem.value = data[elemId]
+      if (data.hasOwnProperty(elemId) || data.hasOwnProperty('*')) {
+          elem.value = data[elemId] || data['*']
       }
   }
 }
