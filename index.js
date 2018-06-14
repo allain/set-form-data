@@ -1,1 +1,1 @@
-export { default } from './src/set-form-data';
+module.exports = require('./src/set-form-data')

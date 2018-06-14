@@ -1,29 +1,29 @@
-var TYPE_FILTER = [
-    'text',
-    'textarea',
-    'email',
-    'password',
-    'select-one'
-];
+const TYPE_FILTER = [
+  'text',
+  'textarea',
+  'email',
+  'password',
+  'select-one',
+  'checkbox'
+]
 
-function setFormData(form, data) {
+function setFormData (form, data) {
   if (!form) {
     throw new Error(`A form is required by getFormData, was given form=${form}`)
   }
 
-  for (let i = 0, l = form.elements.length; i < l; i++) {
-      let elem = form.elements[i]
-      if (TYPE_FILTER.indexOf(elem.type) < 0 || elem.disabled) {
-          continue
-      }
-
+  for (let elem of Array.from(form.elements)) {
+    if (TYPE_FILTER.includes(elem.type) && !elem.disabled) {
       let elemId = elem.name || elem.id
-      if (data.hasOwnProperty(elemId)) {
-          elem.value = data[elemId]
+      if (elem.type === 'checkbox' && data[elemId]) {
+        elem.checked = true
+      } else if (data.hasOwnProperty(elemId)) {
+        elem.value = data[elemId]
       } else if (data.hasOwnProperty('*')) {
-          elem.value = data['*']
+        elem.value = data['*']
       }
+    }
   }
 }
 
-export default setFormData
+module.exports = setFormData

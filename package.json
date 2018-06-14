@@ -2,21 +2,11 @@
   "name": "set-form-data",
   "version": "0.0.7",
   "description": "Sets form data via form.elements",
-  "main": "lib/index.js",
+  "main": "index.js",
   "homepage": "https://github.com/smiley325/set-form-data",
   "license": "MIT",
   "author": "Andrew Lee <smiley325squared@gmail.com>",
   "dependencies": {},
-  "devDependencies": {
-    "babel-plugin-syntax-jsx": "^6.5.0",
-    "babel-plugin-transform-h-jsx": "^1.0.0",
-    "babel-preset-es2015": "^6.6.0",
-    "babelify": "^7.2.0",
-    "browserify": "^13.0.0",
-    "gulp": "^3.9.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-tap": "^0.1.3"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/smiley325/set-form-data.git"
@@ -24,10 +14,5 @@
   "keywords": [
     "form",
     "forms"
-  ],
-  "browserify": {
-    "transform": [
-      "babelify"
-    ]
-  }
+  ]
 }
