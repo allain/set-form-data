@@ -1,4 +1,4 @@
-const TYPE_FILTER = [
+var TYPE_FILTER = [
   'text',
   'textarea',
   'email',
@@ -12,9 +12,12 @@ function setFormData (form, data) {
     throw new Error(`A form is required by getFormData, was given form=${form}`)
   }
 
-  for (let elem of Array.from(form.elements)) {
-    if (TYPE_FILTER.includes(elem.type) && !elem.disabled) {
-      let elemId = elem.name || elem.id
+  // Assumes Array.from has been polyfilled
+  var elements = Array.from(form.elements)
+
+  elements.forEach(function (elem) {
+    if (TYPE_FILTER.indexOf(elem.type) !== -1 && !elem.disabled) {
+      var elemId = elem.name || elem.id
       if (elem.type === 'checkbox' && data[elemId]) {
         elem.checked = true
       } else if (data.hasOwnProperty(elemId)) {
@@ -23,7 +26,7 @@ function setFormData (form, data) {
         elem.value = data['*']
       }
     }
-  }
+  })
 }
 
 module.exports = setFormData
