@@ -9,7 +9,7 @@ var TYPE_FILTER = [
 
 function setFormData (form, data) {
   if (!form) {
-    throw new Error(`A form is required by getFormData, was given form=${form}`)
+    throw new Error('A form is required by getFormData, was given form=' + form)
   }
 
   // Assumes Array.from has been polyfilled
